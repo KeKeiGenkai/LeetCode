@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // Ввод данных
+        System.out.print("Введите вес тела (в килограммах): ");
+        double mass = 20;
+
+        System.out.print("Введите скорость (в км/ч): ");
+        double speedKmh = 100;
+
+        // Константа ускорения свободного падения
+        final double GRAVITY = 9.81;
+
+        // Конвертация скорости из км/ч в м/с
+        double speedMs = speedKmh * 1000 / 3600;
+
+        // Предполагаемое время остановки в секундах
+        double deltaT = 0.1;
+
+        // Вычисление импульса (p = m * v)
+        double impulse = mass * speedMs;
+
+        // Вычисление силы удара (F = p / Δt)
+        double force = impulse / deltaT;
+
+        // Преобразование силы удара в эквивалентную массу
+        double forceInKg = force / GRAVITY;
+
+        // Вывод результата
+        System.out.printf("Эквивалент силы удара: %.2f кг%n", forceInKg);
+    }
+}
